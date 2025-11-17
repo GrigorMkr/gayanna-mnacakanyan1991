@@ -12,7 +12,8 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'dist'),
       filename: isProduction ? 'js/[name].[contenthash].js' : 'js/[name].js',
       clean: true,
-      assetModuleFilename: 'assets/[name][ext]'
+      assetModuleFilename: 'assets/[name][ext]',
+      publicPath: process.env.GITHUB_PAGES ? '/gayanna-mnacakanyan1991/' : '/'
     },
     module: {
       rules: [
