@@ -215,126 +215,75 @@ body::before {
     }
 }
 
-.logo-colors-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
+.navbar-colors-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
-    z-index: 1;
-    transform: translate(-50%, -50%);
+    z-index: 1001;
 }
 
-.logo-color-dot {
+.navbar-color-dot {
     position: absolute;
     width: 12px;
     height: 12px;
     border-radius: 50%;
     box-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
-    opacity: 0.9;
-    animation: colorOrbit 20s linear infinite;
-    will-change: transform;
-    top: 0;
-    left: 0;
+    will-change: transform, opacity;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-@keyframes colorOrbit {
-    /* Вращение вокруг палитры - 3 круга (30% = 6s), цвета видны */
-    0% {
-        transform: rotate(0deg) translateX(47px) rotate(0deg);
-        opacity: 0.9;
+.palette-colors-animated circle,
+.palette-colors-animated ellipse {
+    will-change: opacity;
+}
+
+@keyframes paletteColorVisibility {
+    /* Цвета видны на палитре (0-30% и 70-100%) */
+    0%, 30%, 70%, 100% {
+        opacity: 1;
     }
-    30% {
-        transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
-        opacity: 0.9;
-    }
-    
-    /* Исчезновение с палитры и переход к навбару (5% = 1s) */
-    30% {
-        transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
-        opacity: 0.9;
-    }
-    32% {
-        transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
+    /* Цвета скрыты когда идут на навбар (30-70%) */
+    32%, 68% {
         opacity: 0;
     }
+}
+
+@keyframes colorOrbitNavbar {
+    /* Цвета скрыты когда на палитре (0-32% и 68-100%) */
+    0%, 32%, 68%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+    
+    /* Появление на навбаре и движение по прямоугольнику (33-67%) */
     33% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
-        opacity: 0;
-    }
-    35% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
         opacity: 0.8;
-    }
-    
-    /* Движение по навбару - прямоугольник (30% = 6s), цвета видны */
-    /* Сверху слева направо */
-    35% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
-        opacity: 0.8;
+        transform: translate(calc(0px - 50%), calc(-60px - 50%));
     }
     42.5% {
-        transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(-60px) rotate(-1080deg);
         opacity: 0.8;
-    }
-    
-    /* Справа сверху вниз */
-    42.5% {
-        transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(-60px) rotate(-1080deg);
-        opacity: 0.8;
+        transform: translate(calc(100vw - 50%), calc(-60px - 50%));
     }
     50% {
-        transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(0px) rotate(-1080deg);
         opacity: 0.8;
-    }
-    
-    /* Снизу справа налево */
-    50% {
-        transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(0px) rotate(-1080deg);
-        opacity: 0.8;
+        transform: translate(calc(100vw - 50%), calc(0px - 50%));
     }
     57.5% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(0px) rotate(-1080deg);
         opacity: 0.8;
-    }
-    
-    /* Слева снизу вверх */
-    57.5% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(0px) rotate(-1080deg);
-        opacity: 0.8;
+        transform: translate(calc(0px - 50%), calc(0px - 50%));
     }
     65% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
         opacity: 0.8;
-    }
-    
-    /* Исчезновение с навбара и возврат к палитре (5% = 1s) */
-    65% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
-        opacity: 0.8;
+        transform: translate(calc(0px - 50%), calc(-60px - 50%));
     }
     67% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
         opacity: 0;
-    }
-    68% {
-        transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
-        opacity: 0;
-    }
-    70% {
-        transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
-        opacity: 0.9;
-    }
-    
-    /* Снова вращение вокруг палитры - 3 круга (30% = 6s), цвета видны */
-    70% {
-        transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
-        opacity: 0.9;
-    }
-    100% {
-        transform: rotate(2160deg) translateX(47px) rotate(-2160deg);
-        opacity: 0.9;
+        transform: translate(-50%, -50%);
     }
 }
 
