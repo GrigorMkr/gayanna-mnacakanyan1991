@@ -61,9 +61,13 @@ export class NavbarView {
     
     updateLogoForMobile(logo) {
         const isMobile = window.innerWidth <= 768;
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
         const gradientId = `logoGradient-${Date.now()}`;
+        const borderId = `border-${Date.now()}`;
+        const colorsId = `colors-${Date.now()}`;
         
-        if (isMobile) {
+        if (isMobile || isIOS) {
             logo.innerHTML = `
                 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -72,18 +76,31 @@ export class NavbarView {
                             <stop offset="50%" style="stop-color:#D4A574;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#C9A961;stop-opacity:1" />
                         </linearGradient>
+                        <linearGradient id="rainbowGradientMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF0080;stop-opacity:0.4" />
+                            <stop offset="16.66%" style="stop-color:#FF4000;stop-opacity:0.4" />
+                            <stop offset="33.33%" style="stop-color:#FFFF00;stop-opacity:0.4" />
+                            <stop offset="50%" style="stop-color:#00FF80;stop-opacity:0.4" />
+                            <stop offset="66.66%" style="stop-color:#0080FF;stop-opacity:0.4" />
+                            <stop offset="83.33%" style="stop-color:#8000FF;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#FF00FF;stop-opacity:0.4" />
+                        </linearGradient>
                     </defs>
-                    <circle cx="50" cy="50" r="47" stroke="#D4A574" stroke-width="2" fill="none" opacity="0.5"/>
+                    <g id="${borderId}" style="transform-origin: 50px 50px;">
+                        <circle cx="50" cy="50" r="47" stroke="url(#rainbowGradientMobile)" stroke-width="2" fill="none" opacity="0.5"/>
+                    </g>
                     <ellipse cx="50" cy="50" rx="40" ry="32" fill="#E8D5C4" opacity="0.9" transform="rotate(-15 50 50)"/>
                     <ellipse cx="50" cy="50" rx="40" ry="32" stroke="#8B4513" stroke-width="3" fill="none" transform="rotate(-15 50 50)"/>
-                    <circle cx="50" cy="18" r="6" fill="#FF0080" opacity="0.9"/>
-                    <circle cx="75" cy="35" r="6" fill="#FFD700" opacity="0.9"/>
-                    <circle cx="82" cy="50" r="6" fill="#00FF80" opacity="0.9"/>
-                    <circle cx="75" cy="65" r="6" fill="#0080FF" opacity="0.9"/>
-                    <circle cx="50" cy="82" r="6" fill="#FF00FF" opacity="0.9"/>
-                    <circle cx="25" cy="65" r="6" fill="#FF4000" opacity="0.9"/>
-                    <circle cx="18" cy="50" r="6" fill="#00FFFF" opacity="0.9"/>
-                    <circle cx="25" cy="35" r="6" fill="#8000FF" opacity="0.9"/>
+                    <g id="${colorsId}" style="transform-origin: 50px 50px;">
+                        <circle cx="50" cy="18" r="6" fill="#FF0080" opacity="0.9"/>
+                        <circle cx="75" cy="35" r="6" fill="#FFD700" opacity="0.9"/>
+                        <circle cx="82" cy="50" r="6" fill="#00FF80" opacity="0.9"/>
+                        <circle cx="75" cy="65" r="6" fill="#0080FF" opacity="0.9"/>
+                        <circle cx="50" cy="82" r="6" fill="#FF00FF" opacity="0.9"/>
+                        <circle cx="25" cy="65" r="6" fill="#FF4000" opacity="0.9"/>
+                        <circle cx="18" cy="50" r="6" fill="#00FFFF" opacity="0.9"/>
+                        <circle cx="25" cy="35" r="6" fill="#8000FF" opacity="0.9"/>
+                    </g>
                     <text x="50" y="58" font-family="'Dancing Script', cursive" font-size="32" font-weight="700" fill="#4A2C1A" text-anchor="middle">GM</text>
                     <text x="50" y="76" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#4A2C1A" text-anchor="middle">customs</text>
                     <path d="M65 35 L73 25 L74 30 L66 40 Z" fill="url(#${gradientId})" opacity="0.95"/>
@@ -92,6 +109,19 @@ export class NavbarView {
                     <path d="M69 24 L70 19" stroke="url(#${gradientId})" stroke-width="2.5" stroke-linecap="round"/>
                 </svg>
             `;
+            
+            // Добавляем CSS анимации для iOS после добавления в DOM
+            requestAnimationFrame(() => {
+                const borderElement = logo.querySelector(`#${borderId}`);
+                const colorsElement = logo.querySelector(`#${colorsId}`);
+                
+                if (borderElement && colorsElement) {
+                    borderElement.style.animation = 'logoRotate 15s linear infinite';
+                    borderElement.style.willChange = 'transform';
+                    colorsElement.style.animation = 'logoRotateReverse 15s linear infinite';
+                    colorsElement.style.willChange = 'transform';
+                }
+            });
         } else {
             const rainbowGradientId = `rainbowGradient-${Date.now()}`;
             const neonGlowId = `neonGlow-${Date.now()}`;

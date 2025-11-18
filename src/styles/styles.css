@@ -197,6 +197,24 @@ body::before {
     }
 }
 
+@keyframes logoRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes logoRotateReverse {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .language-switcher {
     display: flex;
     gap: 0.5rem;
