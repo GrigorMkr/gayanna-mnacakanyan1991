@@ -2392,6 +2392,35 @@ body::before {
 }
 
 @media (max-width: 768px) {
+    .nav-brand-logo {
+        width: 70px;
+        height: 70px;
+        filter: drop-shadow(0 2px 8px rgba(139, 69, 19, 0.3));
+        animation: none;
+    }
+    
+    .nav-brand-logo svg {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .nav-brand-logo svg text:first-of-type {
+        font-size: 24px !important;
+    }
+    
+    .nav-brand-logo svg text:last-of-type {
+        font-size: 12px !important;
+    }
+    
+    .nav-brand {
+        margin-right: 0.5rem;
+    }
+    
+    .nav-brand:hover .nav-brand-logo {
+        transform: scale(1.05);
+        animation: none;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -2527,6 +2556,28 @@ body::before {
 }
 
 @media (max-width: 480px) {
+    .nav-brand-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .nav-brand-logo svg {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .nav-brand-logo svg text:first-of-type {
+        font-size: 20px !important;
+    }
+    
+    .nav-brand-logo svg text:last-of-type {
+        font-size: 10px !important;
+    }
+    
+    .nav-brand {
+        margin-right: 0.3rem;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
         letter-spacing: 1px;
