@@ -27,6 +27,12 @@ export class App {
             console.error('Элемент #app не найден!');
             return;
         }
+        
+        // Очищаем индикатор загрузки, если есть
+        const loading = app.querySelector('.loading');
+        if (loading) {
+            loading.remove();
+        }
 
         const cart = new Cart(this.presenter.getConfig());
         const { cartIcon } = cart.init();

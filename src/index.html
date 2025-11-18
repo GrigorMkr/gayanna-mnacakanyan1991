@@ -11,9 +11,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Dancing+Script:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        #app {
+            min-height: 100vh;
+        }
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: #4A2C1A;
+        }
+        .error {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            color: #8B4513;
+        }
+    </style>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <div class="loading">Загрузка...</div>
+    </div>
+    <noscript>
+        <div class="error">
+            <h1>JavaScript отключен</h1>
+            <p>Для работы сайта необходимо включить JavaScript в настройках браузера.</p>
+        </div>
+    </noscript>
 </body>
 </html>
 

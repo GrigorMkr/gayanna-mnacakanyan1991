@@ -11,7 +11,10 @@ export class PathUtils {
         // Если мы на GitHub Pages (URL содержит /gayanna-mnacakanyan1991/)
         if (typeof window !== 'undefined') {
             const pathname = window.location.pathname;
-            if (pathname.includes('/gayanna-mnacakanyan1991/')) {
+            const hostname = window.location.hostname;
+            
+            // Проверяем, что мы на GitHub Pages
+            if (hostname.includes('github.io') || pathname.includes('/gayanna-mnacakanyan1991')) {
                 return '/gayanna-mnacakanyan1991';
             }
         }
