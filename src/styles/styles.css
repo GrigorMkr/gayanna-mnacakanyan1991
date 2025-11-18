@@ -29,7 +29,7 @@ body {
     transition: opacity 0.5s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 25%, #D4A574 50%, #C9A961 75%, #D4A574 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     min-height: 100vh;
@@ -80,7 +80,7 @@ body::before {
     backdrop-filter: blur(25px) saturate(200%);
     box-shadow: 
         0 4px 30px rgba(0, 0, 0, 0.15),
-        0 0 50px rgba(255, 107, 107, 0.1);
+        0 0 50px rgba(212, 165, 116, 0.1);
     z-index: 1000;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     animation: navbarSlideDown 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -95,7 +95,7 @@ body::before {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #FF6B6B, #4ECDC4, transparent);
+    background: linear-gradient(90deg, transparent, #D4A574, #C9A961, transparent);
     animation: navbarShimmer 3s ease infinite;
 }
 
@@ -134,7 +134,7 @@ body::before {
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #8B4513 0%, #FF6B6B 50%, #4ECDC4 100%);
+    background: linear-gradient(135deg, #8B4513 0%, #D4A574 50%, #C9A961 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -235,7 +235,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(255, 107, 107, 0.1));
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(212, 165, 116, 0.1));
     border-radius: 25px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -251,10 +251,10 @@ body::before {
     transform: translateX(-50%);
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #8B4513, #FF6B6B, #4ECDC4);
+    background: linear-gradient(90deg, #8B4513, #D4A574, #C9A961);
     border-radius: 2px;
     transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.5);
+    box-shadow: 0 2px 10px rgba(212, 165, 116, 0.5);
     pointer-events: none;
     z-index: 1;
 }
@@ -262,11 +262,11 @@ body::before {
 .nav-link:hover {
     color: #FFFFFF;
     transform: translateY(-5px) scale(1.1) rotate(2deg);
-    background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(255, 107, 107, 0.9));
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(212, 165, 116, 0.9));
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 
         0 8px 25px rgba(139, 69, 19, 0.4),
-        0 0 30px rgba(255, 107, 107, 0.3),
+        0 0 30px rgba(212, 165, 116, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     animation: navLinkDance 0.6s ease infinite;
     z-index: 10;
@@ -340,7 +340,7 @@ body::before {
 .hamburger span {
     width: 28px;
     height: 3px;
-    background: linear-gradient(90deg, #8B4513 0%, #FF6B6B 100%);
+    background: linear-gradient(90deg, #8B4513 0%, #D4A574 100%);
     border-radius: 3px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -425,7 +425,7 @@ body::before {
     text-shadow: 
         0 0 25px rgba(255, 255, 255, 0.9),
         0 0 50px rgba(255, 215, 0, 0.7),
-        0 0 70px rgba(255, 107, 107, 0.5),
+        0 0 70px rgba(212, 165, 116, 0.5),
         0 4px 30px rgba(0, 0, 0, 0.5),
         0 8px 20px rgba(0, 0, 0, 0.4);
     animation: titleGlow 3s ease-in-out infinite alternate;
@@ -456,7 +456,7 @@ body::before {
         text-shadow: 
             0 0 25px rgba(255, 255, 255, 0.9),
             0 0 50px rgba(255, 215, 0, 0.7),
-            0 0 70px rgba(255, 107, 107, 0.5),
+            0 0 70px rgba(212, 165, 116, 0.5),
             0 4px 30px rgba(0, 0, 0, 0.5),
             0 8px 20px rgba(0, 0, 0, 0.4);
         transform: scale(1);
@@ -465,7 +465,7 @@ body::before {
         text-shadow: 
             0 0 35px rgba(255, 255, 255, 1),
             0 0 70px rgba(255, 215, 0, 0.9),
-            0 0 100px rgba(255, 107, 107, 0.7),
+            0 0 100px rgba(212, 165, 116, 0.7),
             0 0 120px rgba(78, 205, 196, 0.5),
             0 4px 30px rgba(0, 0, 0, 0.5),
             0 8px 20px rgba(0, 0, 0, 0.4);
@@ -537,7 +537,7 @@ body::before {
 .hero-divider {
     width: 150px;
     height: 4px;
-    background: linear-gradient(90deg, #FF6B6B 0%, #FFD700 50%, #4ECDC4 100%);
+    background: linear-gradient(90deg, #D4A574 0%, #FFD700 50%, #C9A961 100%);
     margin: 0 auto 2rem;
     position: relative;
     z-index: 2;
@@ -661,7 +661,7 @@ body::before {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #FF6B6B 0%, #C9A961 50%, #4ECDC4 100%);
+    background: linear-gradient(90deg, #D4A574 0%, #C9A961 50%, #E8D5C4 100%);
     box-shadow: 0 2px 10px rgba(201, 169, 97, 0.5);
 }
 
@@ -722,7 +722,7 @@ body::before {
     backdrop-filter: blur(15px) saturate(180%);
     padding: 3rem;
     border-radius: 25px;
-    border-left: 5px solid #FF6B6B;
+    border-left: 5px solid #D4A574;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     position: relative;
     overflow: hidden;
@@ -736,7 +736,7 @@ body::before {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #FF6B6B 0%, #C9A961 50%, #4ECDC4 100%);
+    background: linear-gradient(90deg, #D4A574 0%, #C9A961 50%, #E8D5C4 100%);
 }
 
 .about-text-paragraph {
@@ -762,12 +762,12 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #FF6B6B 0%, #C9A961 100%);
+    background: linear-gradient(135deg, #D4A574 0%, #C9A961 100%);
     border-radius: 50%;
     padding: 6px;
     color: #FFFFFF;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
     margin-top: 0.2rem;
 }
 
@@ -779,7 +779,7 @@ body::before {
 }
 
 .about-text-paragraph:nth-child(1) .about-text-icon {
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF8B94 100%);
+    background: linear-gradient(135deg, #D4A574 0%, #E8D5C4 100%);
 }
 
 .about-text-paragraph:nth-child(2) .about-text-icon {
@@ -803,7 +803,7 @@ body::before {
 
 .about-text-paragraph:hover .about-text-icon {
     transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
 }
 
 .about-text-paragraph:hover .about-text-content {
@@ -993,9 +993,9 @@ body::before {
 }
 
 .modal-close:hover {
-    background: rgba(255, 107, 107, 0.8);
+    background: rgba(212, 165, 116, 0.8);
     transform: rotate(90deg) scale(1.1);
-    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
 }
 
 .modal-close:active {
@@ -1035,15 +1035,209 @@ body::before {
 
 .modal-prev:hover,
 .modal-next:hover {
-    background: rgba(255, 107, 107, 0.8);
+    background: rgba(212, 165, 116, 0.8);
     transform: scale(1.15);
-    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
 }
 
 .modal-prev:active,
 .modal-next:active {
     background: rgba(255, 139, 148, 0.9);
     transform: scale(1.05);
+}
+
+/* Отзывы */
+.reviews {
+    padding: 100px 0;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.reviews-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #D4A574, #C9A961, #E8D5C4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.review-card:hover::before {
+    opacity: 1;
+}
+
+.review-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 1.2rem;
+}
+
+.review-star {
+    color: #FFD700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.review-star svg {
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+}
+
+.review-card:hover .review-star {
+    animation: starTwinkle 0.6s ease;
+}
+
+.review-card:hover .review-star:nth-child(1) { animation-delay: 0s; }
+.review-card:hover .review-star:nth-child(2) { animation-delay: 0.1s; }
+.review-card:hover .review-star:nth-child(3) { animation-delay: 0.2s; }
+.review-card:hover .review-star:nth-child(4) { animation-delay: 0.3s; }
+.review-card:hover .review-star:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes starTwinkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+.review-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #2C2C2C;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.review-text::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-size: 3rem;
+    color: rgba(212, 165, 116, 0.2);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
+
+.review-client {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.review-client-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid rgba(212, 165, 116, 0.3);
+    transition: all 0.3s ease;
+}
+
+.review-card:hover .review-client-photo {
+    border-color: rgba(212, 165, 116, 0.6);
+    transform: scale(1.1);
+}
+
+.review-client-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-client-photo-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #D4A574, #C9A961);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.review-client-details {
+    flex: 1;
+}
+
+.review-client-name {
+    font-weight: 600;
+    color: #2C2C2C;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.review-client-meta {
+    font-size: 0.9rem;
+    color: rgba(44, 44, 44, 0.6);
+    font-weight: 400;
+}
+
+/* Адаптивность для отзывов */
+@media (max-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .review-card {
+        padding: 1.5rem;
+    }
+    
+    .review-text {
+        font-size: 0.95rem;
+        padding-left: 1rem;
+    }
+    
+    .review-client-photo {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 /* Контакты */
@@ -1116,7 +1310,7 @@ body::before {
 }
 
 .contact-link:hover {
-    background: linear-gradient(135deg, #8B4513 0%, #FF6B6B 100%);
+    background: linear-gradient(135deg, #8B4513 0%, #D4A574 100%);
     color: #FFFFFF;
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
@@ -1212,7 +1406,7 @@ body::before {
     position: absolute;
     top: -5px;
     right: -5px;
-    background: #FF6B6B;
+    background: #D4A574;
     color: #FFFFFF;
     border-radius: 50%;
     width: 20px;
@@ -1267,10 +1461,10 @@ body::before {
 .gallery-add-to-cart:hover {
     opacity: 1 !important;
     transform: scale(1.15) !important;
-    background: rgba(255, 107, 107, 0.95);
-    border-color: rgba(255, 107, 107, 0.8);
+    background: rgba(212, 165, 116, 0.95);
+    border-color: rgba(212, 165, 116, 0.8);
     color: #FFFFFF;
-    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
 }
 
 .gallery-add-to-cart::before {
@@ -1281,16 +1475,16 @@ body::before {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 107, 107, 0.3);
+    background: rgba(212, 165, 116, 0.3);
     transform: translate(-50%, -50%);
     transition: width 0.6s ease, height 0.6s ease;
 }
 
 .gallery-add-to-cart:hover {
-    background: #FF6B6B;
+    background: #D4A574;
     transform: scale(1.15);
     color: #FFFFFF;
-    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
 }
 
 .gallery-add-to-cart:hover::before {
@@ -1299,9 +1493,9 @@ body::before {
 }
 
 .gallery-add-to-cart:active {
-    background: #FF8B94;
+    background: #E8D5C4;
     transform: scale(1.05);
-    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.6);
+    box-shadow: 0 2px 10px rgba(212, 165, 116, 0.6);
 }
 
 .gallery-add-to-cart svg {
@@ -1592,7 +1786,7 @@ body::before {
 }
 
 .cart-item-remove {
-    background: #FF6B6B;
+    background: #D4A574;
     border: none;
     width: 35px;
     height: 35px;
@@ -1622,9 +1816,9 @@ body::before {
 }
 
 .cart-item-remove:hover {
-    background: #FF8B94;
+    background: #E8D5C4;
     transform: scale(1.15);
-    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 2px 10px rgba(212, 165, 116, 0.4);
 }
 
 .cart-item-remove:hover::before {
@@ -1635,7 +1829,7 @@ body::before {
 .cart-item-remove:active {
     background: #FF4757;
     transform: scale(0.95);
-    box-shadow: 0 1px 5px rgba(255, 107, 107, 0.6);
+    box-shadow: 0 1px 5px rgba(212, 165, 116, 0.6);
 }
 
 .cart-modal-footer {
@@ -1666,7 +1860,7 @@ body::before {
 }
 
 .cart-total-value {
-    color: #FF6B6B;
+    color: #D4A574;
     font-size: 1.3rem;
 }
 
@@ -1861,7 +2055,7 @@ body::before {
     position: fixed;
     top: 100px;
     right: 20px;
-    background: #FF6B6B;
+    background: #D4A574;
     color: #FFFFFF;
     padding: 1rem 1.5rem;
     border-radius: 10px;

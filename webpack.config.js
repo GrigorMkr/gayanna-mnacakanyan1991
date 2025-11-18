@@ -7,7 +7,7 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
 
   return {
-    entry: './src/index.js',
+    entry: './src/main/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: isProduction ? 'js/[name].[contenthash].js' : 'js/[name].js',
@@ -125,7 +125,11 @@ module.exports = (env, argv) => {
         '@components': path.resolve(__dirname, 'src/components'),
         '@utils': path.resolve(__dirname, 'src/utils'),
         '@styles': path.resolve(__dirname, 'src/styles'),
-        '@config': path.resolve(__dirname, 'src/config')
+        '@config': path.resolve(__dirname, 'src/config'),
+        '@constants': path.resolve(__dirname, 'src/constants'),
+        '@presenters': path.resolve(__dirname, 'src/presenters'),
+        '@views': path.resolve(__dirname, 'src/views'),
+        '@main': path.resolve(__dirname, 'src/main')
       }
     },
     optimization: {
