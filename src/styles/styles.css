@@ -36,6 +36,64 @@ body {
     position: relative;
 }
 
+/* Отключение анимаций для Android для предотвращения мерцания */
+@media screen and (max-width: 768px) {
+    /* Упрощаем эффекты для всех мобильных устройств */
+    body::before {
+        display: none;
+    }
+    
+    .navbar::after {
+        display: none;
+    }
+    
+    /* Дополнительные оптимизации для Android */
+    @supports not (-webkit-touch-callout: none) {
+        /* Android и другие не-iOS устройства */
+        body {
+            animation: none !important;
+            background-position: 0% 50% !important;
+        }
+        
+        .navbar {
+            backdrop-filter: blur(5px) saturate(120%) !important;
+            -webkit-backdrop-filter: blur(5px) saturate(120%) !important;
+        }
+        
+        .navbar::before {
+            display: none !important;
+        }
+        
+        .nav-brand-logo {
+            animation: none !important;
+            filter: drop-shadow(0 2px 4px rgba(139, 69, 19, 0.2)) !important;
+            backdrop-filter: blur(3px) !important;
+        }
+        
+        .nav-brand-logo svg {
+            filter: none !important;
+        }
+        
+        * {
+            will-change: auto !important;
+            animation-duration: 0s !important;
+            animation-delay: 0s !important;
+        }
+        
+        .navbar-colors-container,
+        .navbar-color-dot {
+            display: none !important;
+        }
+        
+        @keyframes * {
+            from, to {
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+    }
+}
+
 body::before {
     content: '';
     position: fixed;
@@ -93,6 +151,8 @@ body::before {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     overflow: visible;
     position: relative;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .navbar::after {
@@ -223,6 +283,8 @@ body::before {
     height: 100%;
     pointer-events: none;
     z-index: 1001;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .navbar-color-dot {
@@ -234,7 +296,8 @@ body::before {
     will-change: transform, opacity;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(0);
+    -webkit-transform: translate(-50%, -50%) translateZ(0);
 }
 
 .palette-colors-animated circle,
