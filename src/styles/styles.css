@@ -84,13 +84,6 @@ body {
         .navbar-color-dot {
             display: none !important;
         }
-        
-        @keyframes * {
-            from, to {
-                transform: none !important;
-                opacity: 1 !important;
-            }
-        }
     }
 }
 
