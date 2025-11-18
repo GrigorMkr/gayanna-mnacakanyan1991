@@ -51,6 +51,34 @@ export class NavbarView {
         const logo = DOMUtils.createElement('div', 'nav-brand-logo');
         this.updateLogoForMobile(logo);
         
+        // Создаем цветные точки для анимации только для десктопа
+        const isMobile = window.innerWidth <= 768;
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        
+        if (!isMobile && !isIOS) {
+            const colorsContainer = DOMUtils.createElement('div', 'logo-colors-container');
+            const colors = [
+                { color: '#FF0080', delay: 0 },
+                { color: '#FFD700', delay: 0.5 },
+                { color: '#00FF80', delay: 1 },
+                { color: '#0080FF', delay: 1.5 },
+                { color: '#FF00FF', delay: 2 },
+                { color: '#FF4000', delay: 2.5 },
+                { color: '#00FFFF', delay: 3 },
+                { color: '#8000FF', delay: 3.5 }
+            ];
+            
+            colors.forEach((item, index) => {
+                const colorDot = DOMUtils.createElement('div', 'logo-color-dot');
+                colorDot.style.backgroundColor = item.color;
+                colorDot.style.animationDelay = `${item.delay}s`;
+                colorsContainer.appendChild(colorDot);
+            });
+            
+            logo.appendChild(colorsContainer);
+        }
+        
         window.addEventListener('resize', () => {
             this.updateLogoForMobile(logo);
         });
