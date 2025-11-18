@@ -34,7 +34,69 @@ export class App {
             loading.remove();
         }
 
+        const cartPresenter = this.presenter.getCartPresenter();
         const cart = new Cart(this.presenter.getConfig());
+        
+        // Синхронизируем Cart с CartPresenter
+        // Загружаем данные из CartPresenter в Cart при инициализации
+        const cartPresenterItems = cartPresenter.getItems();
+        if (cartPresenterItems.length > 0) {
+            cart.items = cartPresenterItems.map(item => ({
+                id: item.id,
+                imagePath: item.image,
+                title: item.title,
+                price: item.price,
+                quantity: item.quantity || 1
+            }));
+            cart.saveToStorage();
+        }
+        
+        // Подписываемся на изменения CartPresenter и синхронизируем Cart
+        cartPresenter.subscribe((items, total, count) => {
+            cart.items = items.map(item => ({
+                id: item.id,
+                imagePath: item.image,
+                title: item.title,
+                price: item.price,
+                quantity: item.quantity || 1
+            }));
+            cart.saveToStorage();
+            cart.updateUI();
+        });
+        
+        // Переопределяем addItem в Cart, чтобы он использовал CartPresenter
+        const originalAddItem = cart.addItem.bind(cart);
+        cart.addItem = function(imagePath, title, price) {
+            // Используем CartPresenter для добавления
+            cartPresenter.addItem(imagePath, title, price);
+            // Cart обновится через подписку на CartPresenter
+        };
+        
+        // Переопределяем removeItem и updateQuantity тоже
+        const originalRemoveItem = cart.removeItem.bind(cart);
+        cart.removeItem = function(id) {
+            cartPresenter.removeItem(id);
+        };
+        
+        const originalUpdateQuantity = cart.updateQuantity.bind(cart);
+        cart.updateQuantity = function(id, quantity) {
+            const item = cartPresenter.items.find(item => item.id === id);
+            if (item) {
+                if (quantity <= 0) {
+                    cartPresenter.removeItem(id);
+                } else {
+                    item.quantity = quantity;
+                    cartPresenter.saveToStorage();
+                    cartPresenter.notifyListeners();
+                }
+            }
+        };
+        
+        const originalClear = cart.clear.bind(cart);
+        cart.clear = function() {
+            cartPresenter.clear();
+        };
+        
         const { cartIcon } = cart.init();
 
         const languagePresenter = this.presenter.getLanguagePresenter();

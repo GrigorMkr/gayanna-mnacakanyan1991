@@ -28,18 +28,25 @@ export class CartPresenter {
     }
 
     addItem(image, title, price) {
-        const item = {
-            id: `${image}-${Date.now()}`,
-            image,
-            title,
-            price,
-            quantity: 1
-        };
+        // Проверяем, есть ли уже такой товар
+        const existingItem = this.items.find(item => item.image === image);
         
-        this.items.push(item);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            const item = {
+                id: `${image}-${Date.now()}`,
+                image,
+                title,
+                price,
+                quantity: 1
+            };
+            this.items.push(item);
+        }
+        
         this.saveToStorage();
         this.notifyListeners();
-        return item;
+        return existingItem || this.items[this.items.length - 1];
     }
 
     removeItem(itemId) {
