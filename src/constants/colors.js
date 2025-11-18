@@ -1,0 +1,22 @@
+/**
+ * Цветовая палитра приложения
+ */
+export const COLORS = {
+    PRIMARY: '#8B4513',
+    SECONDARY: '#D4A574',
+    ACCENT: '#F5E6D3',
+    TEXT_DARK: '#2C2C2C',
+    TEXT_LIGHT: '#666',
+    BG_LIGHT: '#FAF9F6',
+    WHITE: '#FFFFFF',
+    GOLD: '#C9A961',
+    VIBRANT_1: '#FF6B6B',
+    VIBRANT_2: '#4ECDC4',
+    VIBRANT_3: '#FFE66D',
+    VIBRANT_4: '#A8E6CF',
+    VIBRANT_5: '#FF8B94',
+    STAR: '#FFD700',
+    SUCCESS: '#4ECDC4',
+    ERROR: '#FF6B6B'
+};
+
