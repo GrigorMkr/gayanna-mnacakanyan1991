@@ -1,7 +1,3 @@
-/**
- * Главный класс приложения
- * Координирует работу всех компонентов
- */
 import { AppPresenter } from '@presenters/AppPresenter';
 import { NavbarView } from '@views/NavbarView';
 import { HeroView } from '@views/HeroView';
@@ -20,26 +16,20 @@ export class App {
         this.presenter = presenter;
     }
 
-    /**
-     * Инициализация приложения
-     */
     init() {
         if (!this.presenter.init()) {
             return;
         }
 
-        // Получаем контейнер приложения
         const app = document.getElementById('app');
         if (!app) {
             console.error('Элемент #app не найден!');
             return;
         }
 
-        // Инициализируем корзину
         const cart = new Cart(this.presenter.getConfig());
         const { cartIcon } = cart.init();
 
-        // Создаем представления
         const navbarView = new NavbarView(this.presenter.getNavigationPresenter());
         const heroView = new HeroView(this.presenter.getHeroPresenter());
         const aboutView = new AboutView(this.presenter.getAboutPresenter());
@@ -48,11 +38,9 @@ export class App {
         const contactView = new ContactView(this.presenter.getContactPresenter());
         const footerView = new FooterView(this.presenter.getFooterPresenter());
 
-        // Рендерим компоненты
         const navbarElement = navbarView.render();
         app.appendChild(navbarElement);
 
-        // Добавляем иконку корзины в навигацию
         const cartIconPlaceholder = navbarElement.querySelector('.cart-icon-placeholder');
         if (cartIconPlaceholder && cartIcon) {
             cartIconPlaceholder.replaceWith(cartIcon);
@@ -65,22 +53,16 @@ export class App {
         app.appendChild(contactView.render());
         app.appendChild(footerView.render());
 
-        // Инициализируем модальное окно галереи
         const galleryImages = this.presenter.getGalleryPresenter().getGalleryImages();
         GalleryModal.init(galleryImages);
 
-        // Инициализируем эффекты прокрутки
         this.initScrollEffects();
 
-        // Показываем страницу
         requestAnimationFrame(() => {
             document.body.style.opacity = '1';
         });
     }
 
-    /**
-     * Инициализация эффектов прокрутки
-     */
     initScrollEffects() {
         const navbar = document.querySelector('.navbar');
 
@@ -100,7 +82,6 @@ export class App {
 
         window.addEventListener('scroll', handleScroll);
 
-        // Анимация появления элементов при прокрутке
         const observerOptions = {
             threshold: SCROLL_CONFIG.THRESHOLD,
             rootMargin: SCROLL_CONFIG.ROOT_MARGIN
@@ -115,19 +96,16 @@ export class App {
             });
         }, observerOptions);
 
-        // Наблюдаем за секциями
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 const sections = document.querySelectorAll('section');
                 sections.forEach((section) => {
-                    // Не скрываем галерею сразу, чтобы изображения могли загрузиться
                     if (section.id !== 'gallery') {
                         section.style.opacity = '0';
                         section.style.transform = 'translateY(30px)';
                         section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
                         observer.observe(section);
                     } else {
-                        // Галерея видима сразу
                         section.style.opacity = '1';
                         section.style.transform = 'translateY(0)';
                     }
@@ -136,4 +114,3 @@ export class App {
         });
     }
 }
-

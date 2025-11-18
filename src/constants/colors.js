@@ -1,6 +1,3 @@
-/**
- * Цветовая палитра приложения
- */
 export const COLORS = {
     PRIMARY: '#8B4513',
     SECONDARY: '#D4A574',
@@ -19,4 +16,3 @@ export const COLORS = {
     SUCCESS: '#4ECDC4',
     ERROR: '#FF6B6B'
 };
-

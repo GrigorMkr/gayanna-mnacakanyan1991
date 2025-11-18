@@ -1,6 +1,3 @@
-/**
- * Маршруты приложения
- */
 export const ROUTES = {
     HOME: '#home',
     ABOUT: '#about',
@@ -9,9 +6,6 @@ export const ROUTES = {
     CONTACT: '#contact'
 };
 
-/**
- * Названия секций для навигации
- */
 export const NAV_ITEMS = [
     { route: ROUTES.HOME, label: 'Главная' },
     { route: ROUTES.ABOUT, label: 'О художнице' },
@@ -19,4 +13,3 @@ export const NAV_ITEMS = [
     { route: ROUTES.REVIEWS, label: 'Отзывы' },
     { route: ROUTES.CONTACT, label: 'Контакты' }
 ];
-

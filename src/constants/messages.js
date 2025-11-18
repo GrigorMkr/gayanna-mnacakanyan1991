@@ -1,6 +1,3 @@
-/**
- * Сообщения приложения
- */
 export const MESSAGES = {
     CART: {
         ADD_SUCCESS: 'Товар добавлен в корзину',
@@ -18,4 +15,3 @@ export const MESSAGES = {
         NO_REVIEWS: 'Отзывы будут добавлены в конфигурацию'
     }
 };
-

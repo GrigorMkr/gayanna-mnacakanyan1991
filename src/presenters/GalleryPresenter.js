@@ -1,7 +1,3 @@
-/**
- * Презентер для галереи
- * Управляет бизнес-логикой галереи
- */
 export class GalleryPresenter {
     constructor(config, cartPresenter) {
         this.config = config;
@@ -9,10 +5,6 @@ export class GalleryPresenter {
         this.images = [];
     }
 
-    /**
-     * Получает изображения галереи
-     * @returns {Array}
-     */
     getGalleryImages() {
         if (this.images.length === 0) {
             this.images = this.config.galleryImages || [];
@@ -20,11 +12,6 @@ export class GalleryPresenter {
         return this.images;
     }
 
-    /**
-     * Форматирует цену для отображения
-     * @param {number} price - Цена в рублях
-     * @returns {string}
-     */
     formatPrice(price) {
         if (price >= 1000) {
             const thousands = Math.floor(price / 1000);
@@ -38,32 +25,18 @@ export class GalleryPresenter {
         return `${price} ₽`;
     }
 
-    /**
-     * Добавляет товар в корзину
-     * @param {Object} item - Товар для добавления
-     */
     addToCart(item) {
         if (this.cartPresenter) {
             this.cartPresenter.addItem(item.image, item.title, item.price);
         }
     }
 
-    /**
-     * Получает данные картины по индексу
-     * @param {number} index - Индекс картины
-     * @returns {Object|null}
-     */
     getPaintingByIndex(index) {
         const images = this.getGalleryImages();
         return images[index] || null;
     }
 
-    /**
-     * Получает количество проданных картин
-     * @returns {number}
-     */
     getSoldCount() {
         return this.config.gallerySoldCount || 254;
     }
 }
-

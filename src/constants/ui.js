@@ -1,6 +1,3 @@
-/**
- * UI константы
- */
 export const BREAKPOINTS = {
     MOBILE: 768,
     TABLET: 1024,
@@ -29,4 +26,3 @@ export const CART_CONFIG = {
     STORAGE_KEY: 'gayanna_cart',
     ANIMATION_DURATION: 300
 };
-

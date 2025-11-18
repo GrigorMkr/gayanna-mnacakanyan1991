@@ -1,6 +1,3 @@
-/**
- * Константы анимаций
- */
 export const ANIMATION_DELAYS = {
     NAVBAR_ITEM: 0.1,
     HERO_CHAR: 0.1,
@@ -18,4 +15,3 @@ export const TRANSITIONS = {
     BOUNCE: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
     EASE: 'ease'
 };
-
