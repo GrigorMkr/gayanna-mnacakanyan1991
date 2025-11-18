@@ -250,36 +250,52 @@ body::before {
         opacity: 0.9;
     }
     
-    /* Переход к правому краю навбара (5% = 1s) */
+    /* Переход к началу навбара (слева сверху) (5% = 1s) */
     30% {
         transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
         opacity: 0.7;
     }
     35% {
-        transform: rotate(1080deg) translateX(calc(100vw - 150px)) translateY(-60px) rotate(-1080deg);
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
         opacity: 0.8;
     }
     
-    /* Движение по навбару - круг (30% = 6s) */
+    /* Движение по навбару - прямоугольник (30% = 6s) */
+    /* Сверху слева направо */
     35% {
-        transform: rotate(1080deg) translateX(calc(100vw - 150px)) translateY(-60px) rotate(-1080deg);
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
     }
-    40% {
-        transform: rotate(1080deg) translateX(calc(100vw - 150px)) translateY(0px) rotate(-1080deg);
+    42.5% {
+        transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(-60px) rotate(-1080deg);
+    }
+    
+    /* Справа сверху вниз */
+    42.5% {
+        transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(-60px) rotate(-1080deg);
     }
     50% {
-        transform: rotate(1080deg) translateX(150px) translateY(0px) rotate(-1080deg);
+        transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(0px) rotate(-1080deg);
     }
-    60% {
-        transform: rotate(1080deg) translateX(150px) translateY(-60px) rotate(-1080deg);
+    
+    /* Снизу справа налево */
+    50% {
+        transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(0px) rotate(-1080deg);
+    }
+    57.5% {
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(0px) rotate(-1080deg);
+    }
+    
+    /* Слева снизу вверх */
+    57.5% {
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(0px) rotate(-1080deg);
     }
     65% {
-        transform: rotate(1080deg) translateX(calc(100vw - 150px)) translateY(-60px) rotate(-1080deg);
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
     }
     
     /* Возврат к палитре (5% = 1s) */
     65% {
-        transform: rotate(1080deg) translateX(calc(100vw - 150px)) translateY(-60px) rotate(-1080deg);
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
         opacity: 0.8;
     }
     70% {
