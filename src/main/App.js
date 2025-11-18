@@ -6,6 +6,7 @@ import { GalleryView } from '@views/GalleryView';
 import { ReviewsView } from '@views/ReviewsView';
 import { ContactView } from '@views/ContactView';
 import { FooterView } from '@views/FooterView';
+import { CookieConsentView } from '@views/CookieConsentView';
 import { Cart } from '@components/Cart';
 import { GalleryModal } from '@components/GalleryModal';
 import { DOMUtils } from '@utils/domUtils';
@@ -30,13 +31,35 @@ export class App {
         const cart = new Cart(this.presenter.getConfig());
         const { cartIcon } = cart.init();
 
-        const navbarView = new NavbarView(this.presenter.getNavigationPresenter());
-        const heroView = new HeroView(this.presenter.getHeroPresenter());
-        const aboutView = new AboutView(this.presenter.getAboutPresenter());
-        const galleryView = new GalleryView(this.presenter.getGalleryPresenter());
-        const reviewsView = new ReviewsView(this.presenter.getReviewsPresenter());
-        const contactView = new ContactView(this.presenter.getContactPresenter());
-        const footerView = new FooterView(this.presenter.getFooterPresenter());
+        const languagePresenter = this.presenter.getLanguagePresenter();
+        
+        const navbarPresenter = this.presenter.getNavigationPresenter();
+        navbarPresenter.setLanguagePresenter(languagePresenter);
+        const navbarView = new NavbarView(navbarPresenter);
+        
+        const heroPresenter = this.presenter.getHeroPresenter();
+        heroPresenter.setLanguagePresenter(languagePresenter);
+        const heroView = new HeroView(heroPresenter);
+        
+        const aboutPresenter = this.presenter.getAboutPresenter();
+        aboutPresenter.setLanguagePresenter(languagePresenter);
+        const aboutView = new AboutView(aboutPresenter);
+        
+        const galleryPresenter = this.presenter.getGalleryPresenter();
+        galleryPresenter.setLanguagePresenter(languagePresenter);
+        const galleryView = new GalleryView(galleryPresenter);
+        
+        const reviewsPresenter = this.presenter.getReviewsPresenter();
+        reviewsPresenter.setLanguagePresenter(languagePresenter);
+        const reviewsView = new ReviewsView(reviewsPresenter);
+        
+        const contactPresenter = this.presenter.getContactPresenter();
+        contactPresenter.setLanguagePresenter(languagePresenter);
+        const contactView = new ContactView(contactPresenter);
+        
+        const footerPresenter = this.presenter.getFooterPresenter();
+        footerPresenter.setLanguagePresenter(languagePresenter);
+        const footerView = new FooterView(footerPresenter);
 
         const navbarElement = navbarView.render();
         app.appendChild(navbarElement);
@@ -55,6 +78,12 @@ export class App {
 
         const galleryImages = this.presenter.getGalleryPresenter().getGalleryImages();
         GalleryModal.init(galleryImages);
+
+        const cookieConsentView = new CookieConsentView(this.presenter.getCookieConsentPresenter());
+        const cookieConsentModal = cookieConsentView.render();
+        if (cookieConsentModal) {
+            document.body.appendChild(cookieConsentModal);
+        }
 
         this.initScrollEffects();
 

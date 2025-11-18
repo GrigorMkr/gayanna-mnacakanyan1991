@@ -19,9 +19,12 @@ export class HeroView {
         const content = DOMUtils.createElement('div', 'hero-content');
         
         const title = this.createTitle();
-        const subtitle = DOMUtils.createElement('p', 'hero-subtitle', this.presenter.getConfig().title);
+        const config = this.presenter.getConfig();
+        const subtitleText = config && config.title ? config.title : 'Художница';
+        const subtitle = DOMUtils.createElement('p', 'hero-subtitle', subtitleText);
         const divider = DOMUtils.createElement('div', 'hero-divider');
-        const description = DOMUtils.createElement('p', 'hero-description', this.presenter.getConfig().description);
+        const descriptionText = config && config.description ? config.description : 'Живопись, наполненная красотой и эмоциями';
+        const description = DOMUtils.createElement('p', 'hero-description', descriptionText);
         
         const scrollIndicator = this.createScrollIndicator();
         
@@ -42,7 +45,8 @@ export class HeroView {
      */
     createTitle() {
         const title = DOMUtils.createElement('h1', 'hero-title');
-        const artistName = this.presenter.getConfig().artistName;
+        const config = this.presenter.getConfig();
+        const artistName = config && config.artistName ? config.artistName : 'Гаянна Мнацаканян';
         const nameParts = artistName.split(' ');
         const firstName = nameParts[0] || '';
         const lastName = nameParts.slice(1).join(' ') || '';

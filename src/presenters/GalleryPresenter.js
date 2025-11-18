@@ -3,6 +3,15 @@ export class GalleryPresenter {
         this.config = config;
         this.cartPresenter = cartPresenter;
         this.images = [];
+        this.languagePresenter = null;
+    }
+
+    setLanguagePresenter(languagePresenter) {
+        this.languagePresenter = languagePresenter;
+    }
+
+    getLanguagePresenter() {
+        return this.languagePresenter;
     }
 
     getGalleryImages() {

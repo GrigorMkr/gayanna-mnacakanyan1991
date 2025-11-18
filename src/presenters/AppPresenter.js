@@ -6,22 +6,26 @@ import { HeroPresenter } from './HeroPresenter';
 import { AboutPresenter } from './AboutPresenter';
 import { ContactPresenter } from './ContactPresenter';
 import { FooterPresenter } from './FooterPresenter';
+import { CookieConsentPresenter } from './CookieConsentPresenter';
+import { LanguagePresenter } from './LanguagePresenter';
 import { COLORS } from '@constants/colors';
-import { AppConfig } from '@config/appConfig';
+import { ConfigAdapter } from '@config/configAdapter';
 
 export class AppPresenter {
-    constructor(config = AppConfig, colors = COLORS) {
-        this.config = config;
+    constructor(config = null, colors = COLORS) {
+        this.config = config || new ConfigAdapter();
         this.colors = colors;
         
-        this.navigationPresenter = new NavigationPresenter(config);
+        this.navigationPresenter = new NavigationPresenter(this.config);
         this.cartPresenter = new CartPresenter();
-        this.galleryPresenter = new GalleryPresenter(config, this.cartPresenter);
-        this.reviewsPresenter = new ReviewsPresenter(config);
-        this.heroPresenter = new HeroPresenter(config, this.navigationPresenter);
-        this.aboutPresenter = new AboutPresenter(config);
-        this.contactPresenter = new ContactPresenter(config);
-        this.footerPresenter = new FooterPresenter(config);
+        this.galleryPresenter = new GalleryPresenter(this.config, this.cartPresenter);
+        this.reviewsPresenter = new ReviewsPresenter(this.config);
+        this.heroPresenter = new HeroPresenter(this.config, this.navigationPresenter);
+        this.aboutPresenter = new AboutPresenter(this.config);
+        this.contactPresenter = new ContactPresenter(this.config);
+        this.footerPresenter = new FooterPresenter(this.config);
+        this.cookieConsentPresenter = new CookieConsentPresenter();
+        this.languagePresenter = new LanguagePresenter();
         
         this.isInitialized = false;
     }
@@ -64,6 +68,14 @@ export class AppPresenter {
 
     getFooterPresenter() {
         return this.footerPresenter;
+    }
+
+    getCookieConsentPresenter() {
+        return this.cookieConsentPresenter;
+    }
+
+    getLanguagePresenter() {
+        return this.languagePresenter;
     }
 
     init() {

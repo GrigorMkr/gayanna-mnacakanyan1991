@@ -21,7 +21,9 @@ export class GalleryView {
         const container = DOMUtils.createElement('div', 'container');
         
         const titleWrapper = DOMUtils.createElement('div', 'gallery-title-wrapper');
-        const title = DOMUtils.createElement('h2', 'section-title', 'Галерея работ');
+        const languagePresenter = this.presenter.getLanguagePresenter ? this.presenter.getLanguagePresenter() : null;
+        const titleText = languagePresenter ? languagePresenter.t('nav.gallery') : 'Галерея';
+        const title = DOMUtils.createElement('h2', 'section-title', titleText);
         const soldCounter = this.createSoldCounter();
         
         titleWrapper.appendChild(title);
@@ -50,10 +52,12 @@ export class GalleryView {
     createSoldCounter() {
         const soldCounter = DOMUtils.createElement('div', 'gallery-sold-counter');
         const soldNumber = DOMUtils.createElement('span', 'gallery-sold-number', String(this.presenter.getSoldCount()));
-        const soldText = DOMUtils.createElement('span', 'gallery-sold-text', ' картин продано');
+        const languagePresenter = this.presenter.getLanguagePresenter ? this.presenter.getLanguagePresenter() : null;
+        const soldText = languagePresenter ? languagePresenter.t('gallery.soldCount') : ' картин продано';
+        const soldTextSpan = DOMUtils.createElement('span', 'gallery-sold-text', soldText);
         
         soldCounter.appendChild(soldNumber);
-        soldCounter.appendChild(soldText);
+        soldCounter.appendChild(soldTextSpan);
         
         return soldCounter;
     }

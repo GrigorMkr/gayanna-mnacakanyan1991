@@ -36,10 +36,16 @@ export class FooterView {
      * @returns {HTMLElement}
      */
     createCopyright() {
+        const languagePresenter = this.presenter.getLanguagePresenter ? this.presenter.getLanguagePresenter() : null;
         const artistName = this.presenter.getConfig().artistName;
         const year = new Date().getFullYear();
-        return DOMUtils.createElement('p', 'footer-copyright', 
-            `© ${year} ${artistName}. Все права защищены.`);
+        let copyrightText;
+        if (languagePresenter) {
+            copyrightText = languagePresenter.t('footer.copyright');
+        } else {
+            copyrightText = `© ${year} ${artistName}. Все права защищены.`;
+        }
+        return DOMUtils.createElement('p', 'footer-copyright', copyrightText);
     }
 }
 
