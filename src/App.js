@@ -5,6 +5,7 @@ import { Navbar } from '@components/Navbar';
 import { Hero } from '@components/Hero';
 import { About } from '@components/About';
 import { Gallery } from '@components/Gallery';
+import { Reviews } from '@components/Reviews';
 import { Contact } from '@components/Contact';
 import { Footer } from '@components/Footer';
 import { GalleryModal } from '@components/GalleryModal';
@@ -52,6 +53,7 @@ export class App {
         const hero = new Hero(this.config);
         const about = new About(this.config);
         const gallery = new Gallery(this.config, cart);
+        const reviews = new Reviews(this.config);
         const contact = new Contact(this.config);
         const footer = new Footer(this.config);
         
@@ -60,6 +62,7 @@ export class App {
         app.appendChild(hero.create());
         app.appendChild(about.create());
         app.appendChild(gallery.create());
+        app.appendChild(reviews.create());
         app.appendChild(contact.create());
         app.appendChild(footer.create());
         

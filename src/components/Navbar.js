@@ -26,6 +26,7 @@ export class Navbar {
             { href: '#home', text: 'Главная' },
             { href: '#about', text: 'О художнице' },
             { href: '#gallery', text: 'Галерея' },
+            { href: '#reviews', text: 'Отзывы' },
             { href: '#contact', text: 'Контакты' }
         ];
         
