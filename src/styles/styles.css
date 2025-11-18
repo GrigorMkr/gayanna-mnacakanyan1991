@@ -240,7 +240,7 @@ body::before {
 }
 
 @keyframes colorOrbit {
-    /* Вращение вокруг палитры - 3 круга (30% = 6s) */
+    /* Вращение вокруг палитры - 3 круга (30% = 6s), цвета видны */
     0% {
         transform: rotate(0deg) translateX(47px) rotate(0deg);
         opacity: 0.9;
@@ -250,62 +250,87 @@ body::before {
         opacity: 0.9;
     }
     
-    /* Переход к началу навбара (слева сверху) (5% = 1s) */
+    /* Исчезновение с палитры и переход к навбару (5% = 1s) */
     30% {
         transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
-        opacity: 0.7;
+        opacity: 0.9;
+    }
+    32% {
+        transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
+        opacity: 0;
+    }
+    33% {
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
+        opacity: 0;
     }
     35% {
         transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
         opacity: 0.8;
     }
     
-    /* Движение по навбару - прямоугольник (30% = 6s) */
+    /* Движение по навбару - прямоугольник (30% = 6s), цвета видны */
     /* Сверху слева направо */
     35% {
         transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
+        opacity: 0.8;
     }
     42.5% {
         transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(-60px) rotate(-1080deg);
+        opacity: 0.8;
     }
     
     /* Справа сверху вниз */
     42.5% {
         transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(-60px) rotate(-1080deg);
+        opacity: 0.8;
     }
     50% {
         transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(0px) rotate(-1080deg);
+        opacity: 0.8;
     }
     
     /* Снизу справа налево */
     50% {
         transform: rotate(1080deg) translateX(calc(100vw - 50px)) translateY(0px) rotate(-1080deg);
+        opacity: 0.8;
     }
     57.5% {
         transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(0px) rotate(-1080deg);
+        opacity: 0.8;
     }
     
     /* Слева снизу вверх */
     57.5% {
         transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(0px) rotate(-1080deg);
+        opacity: 0.8;
     }
-    65% {
-        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
-    }
-    
-    /* Возврат к палитре (5% = 1s) */
     65% {
         transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
         opacity: 0.8;
+    }
+    
+    /* Исчезновение с навбара и возврат к палитре (5% = 1s) */
+    65% {
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
+        opacity: 0.8;
+    }
+    67% {
+        transform: rotate(1080deg) translateX(calc(0px - 50px)) translateY(-60px) rotate(-1080deg);
+        opacity: 0;
+    }
+    68% {
+        transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
+        opacity: 0;
     }
     70% {
         transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
         opacity: 0.9;
     }
     
-    /* Снова вращение вокруг палитры - 3 круга (30% = 6s) */
+    /* Снова вращение вокруг палитры - 3 круга (30% = 6s), цвета видны */
     70% {
         transform: rotate(1080deg) translateX(47px) rotate(-1080deg);
+        opacity: 0.9;
     }
     100% {
         transform: rotate(2160deg) translateX(47px) rotate(-2160deg);
