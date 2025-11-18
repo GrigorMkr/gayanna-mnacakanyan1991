@@ -18,8 +18,10 @@ export class ReviewsView {
         const section = DOMUtils.createElement('section', 'reviews', '', { id: 'reviews' });
         const container = DOMUtils.createElement('div', 'container');
         
-        const title = DOMUtils.createElement('h2', 'section-title', 'Отзывы клиентов');
-        const subtitle = DOMUtils.createElement('p', 'reviews-subtitle', 'Что говорят наши довольные клиенты');
+        const languagePresenter = this.presenter.getLanguagePresenter ? this.presenter.getLanguagePresenter() : null;
+        const titleText = languagePresenter ? languagePresenter.t('reviews.title') : 'Отзывы клиентов';
+        const title = DOMUtils.createElement('h2', 'section-title', titleText);
+        const subtitle = DOMUtils.createElement('p', 'reviews-subtitle', '');
         
         const reviewsGrid = DOMUtils.createElement('div', 'reviews-grid');
         
