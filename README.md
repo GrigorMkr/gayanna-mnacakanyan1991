@@ -1,123 +1,32 @@
-# Сайт художницы Гаянны Мнацаканян
+# Гаянна Мнацаканян — сайт-портфолио
 
-> **🌐 Живой сайт:** https://grigormkr.github.io/gayanna-mnacakanyan1991/
+> **Живой сайт:** https://grigormkr.github.io/gayanna-mnacakanyan1991/
 
-Современный одностраничный сайт-портфолио, полностью построенный на JavaScript с использованием модульной архитектуры и Webpack.
+Современный одностраничный сайт художницы на React + Vite.
 
-## 🚀 Технологии
+## Стек
 
-- **JavaScript (ES6+)** - Чистый JavaScript с модулями
-- **Webpack 5** - Сборщик модулей
-- **Babel** - Транспиляция ES6+ в ES5
-- **CSS-in-JS** - Стили генерируются через JavaScript
+- React 19
+- Vite 6
+- CSS (custom properties, без UI-библиотек)
 
-## 📁 Структура проекта
+## Запуск
 
-```
-├── src/
-│   ├── components/       # Компоненты приложения
-│   │   ├── Navbar.js
-│   │   ├── Hero.js
-│   │   ├── About.js
-│   │   ├── Gallery.js
-│   │   ├── Contact.js
-│   │   ├── Footer.js
-│   │   └── GalleryModal.js
-│   ├── config/          # Конфигурация
-│   │   ├── appConfig.js
-│   │   └── colorPalette.js
-│   ├── utils/           # Утилиты
-│   │   └── domUtils.js
-│   ├── styles/          # Стили
-│   │   └── styleManager.js
-│   ├── App.js           # Главный класс приложения
-│   ├── index.js         # Точка входа
-│   └── index.html       # HTML шаблон
-├── images/              # Изображения
-├── dist/                # Собранные файлы (генерируется)
-├── webpack.config.js    # Конфигурация Webpack
-├── package.json         # Зависимости проекта
-└── README.md           # Документация
+```bash
+npm install
+npm run dev
 ```
 
-## 🛠️ Установка и запуск
+## Сборка
 
-### Требования
+```bash
+npm run build
+npm run preview
+```
 
-- Node.js версии 14 или выше
-- npm или yarn
+Для GitHub Pages сборка идёт с `GITHUB_PAGES=true` (base path `/gayanna-mnacakanyan1991/`).
 
-### Быстрый старт
+## Контент
 
-1. **Установите зависимости:**
-   ```bash
-   npm install
-   ```
-
-2. **Запустите dev-сервер:**
-   ```bash
-   npm run dev
-   ```
-   
-   Сайт автоматически откроется в браузере по адресу `http://localhost:8080`
-
-3. **Для production сборки:**
-   ```bash
-   npm run build
-   ```
-   
-   Собранные файлы будут в папке `dist/`
-
-### Дополнительные команды
-
-- `npm run build:dev` - Сборка для разработки (без минификации)
-
-> **Примечание:** Старый файл `app.js` в корне проекта больше не используется. Весь код теперь находится в папке `src/` и собирается через Webpack.
-
-## 📝 Настройка
-
-### Изменение контента
-
-Все данные сайта находятся в файле `src/config/appConfig.js`:
-
-- Имя художницы
-- Описание
-- Фотографии
-- Текст "О художнице"
-- Контакты
-- Изображения галереи
-
-### Изменение цветов
-
-Цветовая палитра находится в `src/config/colorPalette.js`
-
-## 🎨 Особенности
-
-- ✅ Полностью модульная архитектура
-- ✅ Компонентный подход
-- ✅ Адаптивный дизайн
-- ✅ Оптимизация производительности
-- ✅ Lazy loading изображений
-- ✅ Модальное окно галереи
-- ✅ Плавная прокрутка
-- ✅ Мобильное меню
-
-## 📦 Скрипты
-
-- `npm run dev` - Запуск dev-сервера
-- `npm run build` - Сборка для production
-- `npm run build:dev` - Сборка для разработки
-
-## 🔧 Webpack конфигурация
-
-Проект использует Webpack 5 с:
-- Code splitting
-- Asset modules для изображений и шрифтов
-- CSS extraction в production
-- Source maps
-- Hot Module Replacement в dev режиме
-
-## 📄 Лицензия
-
-MIT
-
+Тексты, контакты и галерея — в `src/data/site.js`.  
+Изображения — в `public/images/`.

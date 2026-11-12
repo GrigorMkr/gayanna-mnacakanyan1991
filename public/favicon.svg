@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Фон -->
+  <rect width="100" height="100" rx="20" fill="url(#grad1)"/>
+  
+  <!-- Кисть -->
+  <g transform="translate(50, 50)">
+    <!-- Ручка кисти -->
+    <rect x="-3" y="-25" width="6" height="30" rx="3" fill="#8B4513" opacity="0.9"/>
+    
+    <!-- Щетина кисти -->
+    <ellipse cx="0" y="-5" rx="8" ry="12" fill="#FFFFFF" opacity="0.95"/>
+    
+    <!-- Мазок краски -->
+    <path d="M -12 -5 Q -8 5, 0 8 Q 8 5, 12 -5" fill="#FF6B6B" opacity="0.9"/>
+    <path d="M -10 -3 Q -6 3, 0 6 Q 6 3, 10 -3" fill="#FFD700" opacity="0.8"/>
+    <path d="M -8 -1 Q -4 1, 0 4 Q 4 1, 8 -1" fill="#4ECDC4" opacity="0.7"/>
+    
+    <!-- Капли краски -->
+    <circle cx="-15" cy="10" r="3" fill="#FF6B6B" opacity="0.8"/>
+    <circle cx="15" cy="12" r="2.5" fill="#4ECDC4" opacity="0.8"/>
+    <circle cx="0" cy="15" r="2" fill="#FFD700" opacity="0.8"/>
+  </g>
+  
+  <!-- Декоративные элементы -->
+  <circle cx="20" cy="20" r="3" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="80" cy="25" r="2.5" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="25" cy="80" r="2" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="75" cy="75" r="3" fill="#FFFFFF" opacity="0.5"/>
+</svg>
+
